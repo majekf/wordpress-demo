@@ -1,0 +1,6 @@
+.env
+.env.local
+mysql_data/
+wordpress_data/
+.DS_Store
+*.log
