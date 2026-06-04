@@ -8,7 +8,7 @@ APACHE_PID=$!
 
 # Wait longer for WordPress and MySQL to initialize
 echo "Waiting for WordPress files to be copied and MySQL to be ready..."
-sleep 50
+sleep 90
 
 # Check and install WordPress if needed
 if ! wp core is-installed --allow-root 2>/dev/null; then
