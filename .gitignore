@@ -4,3 +4,6 @@ mysql_data/
 wordpress_data/
 .DS_Store
 *.log
+
+# Phase -1 test output (commit this after running)
+# migration/phase-1-redirect-test/test-results.txt

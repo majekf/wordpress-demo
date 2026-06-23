@@ -1,9 +1,48 @@
 # Agentic Development Template Implementation Plan
 ## wordpress-demo: marysmeals.sk Migration to WordPress 7.0
 
-**Last Updated:** June 4, 2026  
-**Status:** Ready for Implementation  
-**Critical Requirement:** WordPress 7.0 with SEOPress Free for URL redirects & SEO management
+**Last Updated:** June 23, 2026  
+**Status:** Phase -1 Implemented — Redirect Strategy Investigation  
+**Active Plan:** See session memory `plan.md` (v7) for current migration plan
+
+---
+
+## Repository Structure
+
+```
+wordpress-demo/
+├── demo/                              # Original simple WordPress demo
+│   ├── docker-compose.yml
+│   ├── Dockerfile
+│   └── entrypoint.sh
+├── migration/                         # Migration scripts (marysmeals.sk)
+│   └── phase-1-redirect-test/         # ✅ IMPLEMENTED
+│       ├── docker-compose.yml
+│       ├── setup-and-test.sh
+│       ├── teardown.sh
+│       └── README.md
+├── AGENTIC-IMPLEMENTATION-PLAN.md     # This file
+├── DOCUMENTATION.md
+└── NEW_SITE_PLAYBOOK.md
+```
+
+## Implementation Progress
+
+| Phase | Status | Location |
+|-------|--------|----------|
+| Phase -1: Redirect Strategy | ✅ Scripts ready | `migration/phase-1-redirect-test/` |
+| Phase 0: Infrastructure | Not started | — |
+| Phase 1: Discovery & Audit | Not started | — |
+| Phase 2–9: Pipeline | Not started | — |
+
+---
+
+## Legacy Plan (Below)
+
+> **Note:** The plan below is from an earlier iteration. The current migration
+> approach is documented in the session plan (v7) which uses a crawl-first
+> discovery, idempotent imports, inventory-based link rewriting, and bulk
+> redirect artifacts. The content below is retained for reference only.
 
 ---
 
