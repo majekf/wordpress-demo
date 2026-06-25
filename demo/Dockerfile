@@ -7,7 +7,8 @@ RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli
 
 # Copy initialization script
 COPY entrypoint.sh /usr/local/bin/custom-entrypoint.sh
-RUN chmod +x /usr/local/bin/custom-entrypoint.sh
+RUN sed -i 's/\r$//' /usr/local/bin/custom-entrypoint.sh && \
+    chmod +x /usr/local/bin/custom-entrypoint.sh
 
-ENTRYPOINT ["/usr/local/bin/custom-entrypoint.sh"]
+ENTRYPOINT ["/bin/bash", "/usr/local/bin/custom-entrypoint.sh"]
 CMD ["apache2-foreground"]

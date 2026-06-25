@@ -121,7 +121,6 @@ cd c:\Users\arath\git_projects\wordpress-demo
 # Start containers (choose one)
 .\startup.bat
 # OR
-docker-compose up -d
 
 docker-compose up -d
 

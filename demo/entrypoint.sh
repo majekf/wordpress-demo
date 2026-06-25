@@ -1,14 +1,14 @@
 #!/bin/bash
-set -e
+set -euo pipefail
 
 # Start Apache in the background
 echo "Starting Apache..."
-docker-entrypoint.sh apache2-foreground &
+/usr/local/bin/docker-entrypoint.sh apache2-foreground &
 APACHE_PID=$!
 
-# Wait longer for WordPress and MySQL to initialize
+# Wait for WordPress files and MySQL readiness
 echo "Waiting for WordPress files to be copied and MySQL to be ready..."
-sleep 90
+sleep 45
 
 # Check and install WordPress if needed
 if ! wp core is-installed --allow-root 2>/dev/null; then
@@ -34,4 +34,4 @@ else
 fi
 
 # Keep Apache running
-wait $APACHE_PID
+wait "$APACHE_PID"
