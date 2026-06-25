@@ -1,0 +1,29 @@
+# Phase -1 Redirect Test Results
+# Date: 2026-06-25T22:03:35+02:00
+# WordPress: 6.7.2
+# Redirection plugin: 5.8.0
+
+## Methods Available
+Method A (wp redirection add):    unavailable
+Method B (Red_Item::create eval): available
+Method C (Bulk eval loop):        available
+Method D (.htaccess RewriteRule): available
+
+## Test Results (pass/fail | test | expected | actual)
+
+true	MethodB: /co-je-marys-meals.php	301→/o-nas/	301→/o-nas/
+true	MethodB: /prihlaste-sa.php	301→/prihlasenie/	301→/prihlasenie/
+true	MethodB: /podpora.php	301→/podpora/	301→/podpora/
+true	MethodC: /index.php	301→/	301→/
+true	MethodC: /co-je-marys-meals.php	301→/o-nas/	301→/o-nas/
+true	MethodC: /podpora.php?b=1	301→/podpora/?b=1	301→/podpora/?b=1
+true	MethodC: /novinky.php	301→/novinky/	301→/novinky/
+true	MethodC: /nasytte-skolu	301→/nasytte-skolu/	301→/nasytte-skolu/
+true	MethodD: /index.php	301→/	301→/
+true	MethodD: /co-je-marys-meals.php	301→/o-nas/	301→/o-nas/
+true	MethodD: /novinky.php	301→/novinky/	301→/novinky/
+true	MethodD: /Test-Case.PHP	301→/podpora/	301→/podpora/
+
+## Summary
+Passed: 12
+Failed: 0

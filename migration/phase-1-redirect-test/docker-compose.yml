@@ -17,7 +17,7 @@ services:
       interval: 5s
 
   wordpress:
-    image: wordpress:6.7.2-php8.3-apache
+    build: .
     container_name: redirect-test-wp
     depends_on:
       db:
@@ -33,11 +33,12 @@ services:
     volumes:
       - wordpress_data:/var/www/html
     ports:
-      - "8080:80"
+      - "8081:80"
 
   wpcli:
     image: wordpress:cli-2.11.0-php8.3
     container_name: redirect-test-cli
+    entrypoint: ["sh", "-c", "trap : TERM INT; sleep infinity & wait"]
     volumes:
       - wordpress_data:/var/www/html
     depends_on:
